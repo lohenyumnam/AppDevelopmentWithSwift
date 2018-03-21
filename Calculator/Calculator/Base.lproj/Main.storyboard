@@ -36,6 +36,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Oe2-rC-CrV" secondAttribute="trailing" constant="8" id="3zv-8v-mPK"/>
                                             <constraint firstAttribute="bottom" secondItem="Oe2-rC-CrV" secondAttribute="bottom" constant="8" id="7Cg-nM-PeF"/>
+                                            <constraint firstItem="Oe2-rC-CrV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8PW-q6-3JB" secondAttribute="leading" constant="20" symbolic="YES" id="GKd-7b-Qhl"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ly7-YJ-KKT">
