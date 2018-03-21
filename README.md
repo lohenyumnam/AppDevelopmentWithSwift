@@ -6,4 +6,5 @@ App Development with Swift (Code Collection from Apple's Book)
 Lesson number | Lesson Name | Project Name
 --------------|-------------|---------------
 2.10 |Auto Layout and Stack Views | AutoLayoutPractice
+2.10 | Lab—Calculator | Calculator
 
