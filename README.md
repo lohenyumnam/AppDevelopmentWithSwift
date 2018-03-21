@@ -9,4 +9,5 @@ Lesson number | Lesson Name | Project Name
 --------------|-------------|---------------
 2.10 |Auto Layout and Stack Views | AutoLayoutPractice
 2.10 | Lab—Calculator | Calculator
+5.6| Working with the Web: Concurrency | SpacePhoto
 
