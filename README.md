@@ -1,2 +1,3 @@
 # AppDevelopmentWithSwift
-App Development with Swift (Code Collection)
+App Development with Swift (Code Collection from Apple's Book)
+
