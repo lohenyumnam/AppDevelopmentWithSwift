@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         descriptionLabel.text = ""
         copyrightLabel.text = ""
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         photoInfoController.fetchPhotoInfo { (photoInfo) in
             if let photoInfo = photoInfo {
                 self.updateUI(with: photoInfo)
@@ -33,7 +34,8 @@ class ViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: photoInfo.url) { (data, response, error) in
             if let data = data,
                 let image = UIImage(data: data){
-
+                
+                
                 // Sending this block of code to main Queue
                     DispatchQueue.main.async {
                         self.title = photoInfo.title
@@ -45,6 +47,8 @@ class ViewController: UIViewController {
                         } else {
                             self.copyrightLabel.isHidden = true
                         }
+                        
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }
         }
