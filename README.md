@@ -12,5 +12,4 @@ Lesson number | Lesson Name | Project Name
 4.9 | Building Complex Input Screens | HotelManzana
 4 | Guided Project: List | ToDoList
 5.6| Working with the Web: Concurrency | SpacePhoto
-
-
+5.6| Lab—iTunes Search (Part 3) | iTunesSearch
