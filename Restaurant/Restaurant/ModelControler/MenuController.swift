@@ -9,6 +9,9 @@
 import Foundation
 
 class MenuController {
+    // This will let us share the instance of MenuController instead of creating for each VC which will readuce the no. of object used in the app
+    static let shared = MenuController()
+    
     let baseURL = URL(string: "http://localhost:8090")!
     
     /// **fetchCategories** it will fetch the JSON data for Categories

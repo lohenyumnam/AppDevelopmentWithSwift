@@ -9,18 +9,15 @@
 import UIKit
 
 class MenuItemDetailViewController: UIViewController {
+    // Since the detail screen will never be presented without a MenuItem object in place, you can define the property as an implicitly unwrapped optional
+    var menuItem: MenuItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
 
     /*
     // MARK: - Navigation
