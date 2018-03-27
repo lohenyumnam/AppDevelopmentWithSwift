@@ -90,11 +90,16 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         let formattedOrder = String(format: "₹%.2f", orderTotal)
         
         let alert = UIAlertController(title: "Confirm Order", message: "You are about to submit your order with a total of \(formattedOrder)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (action) in
-            self.uploadOrder()
-        }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        // Creating action button for the alert
+        let submit = UIAlertAction(title: "Submit", style: .default) { (action) in self.uploadOrder() }
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        // Adding the action button to the alert
+        alert.addAction(submit)
+        alert.addAction(cancel)
+        
+        // Showing the alert
         present(alert, animated: true, completion: nil)
     }
     
