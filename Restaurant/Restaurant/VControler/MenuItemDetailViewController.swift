@@ -34,6 +34,14 @@ class MenuItemDetailViewController: UIViewController {
         titleLabel.text = menuItem.name
         priceLabel.text = String(format: "₹%.2f", menuItem.price)
         descriptionLabel.text = menuItem.description
+        
+        addToOrderButton.layer.cornerRadius = 5.0 // making the button conner rounded
+        
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { (image) in
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
     
     func setupDelegate(){

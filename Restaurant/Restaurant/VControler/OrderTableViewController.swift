@@ -35,6 +35,16 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         let menuItem = menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = String(format: "₹%.2f", menuItem.price)
+        
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { (image) in
+            guard let image = image else { return }
+            DispatchQueue.main.async {
+                
+                // “For table view cells, you'll need to make an additional check. Recall that, in longer lists of data, cells will be recycled and reused as you scroll up and down the table. Since you don't want to put the wrong image into a recycled cell, check which index path the cell is now located. If it's changed, you can skip setting the image view.
+                if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath != indexPath { return }
+                cell.imageView?.image = image
+            }
+        }
 
         return cell
     }
@@ -67,6 +77,11 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
             updateBadgeNumber()
         }
+    }
+    
+    // Increasing the hight for cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func uploadOrder(){

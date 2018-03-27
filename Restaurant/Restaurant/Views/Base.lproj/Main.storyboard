@@ -68,7 +68,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4gs-KC-2Si">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="4gs-KC-2Si">
                                             <rect key="frame" x="75" y="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -112,27 +112,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUG-BK-SfO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUG-BK-SfO">
                                 <rect key="frame" x="16" y="72" width="343" height="167"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-NF-1pr">
-                                <rect key="frame" x="16" y="247" width="255" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 27.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNf-Is-9uJ">
-                                <rect key="frame" x="279" y="247" width="80" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-j0-nsk">
+                                <rect key="frame" x="16" y="247" width="343" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kX5-NF-1pr">
+                                        <rect key="frame" x="0.0" y="0.0" width="257.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 27.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNf-Is-9uJ">
+                                        <rect key="frame" x="257.5" y="0.0" width="85.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="iox-Fu-08l"/>
+                                    <constraint firstItem="kX5-NF-1pr" firstAttribute="width" secondItem="TAA-j0-nsk" secondAttribute="width" multiplier="0.75" id="pKC-If-sgJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-PQ-faf">
-                                <rect key="frame" x="16" y="279" width="343" height="21"/>
+                                <rect key="frame" x="16" y="279" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -151,19 +156,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uUG-BK-SfO" firstAttribute="height" secondItem="7Xg-qd-RQO" secondAttribute="height" multiplier="0.25" id="0sV-DH-7Tx"/>
-                            <constraint firstItem="RUV-b9-zup" firstAttribute="trailing" secondItem="kNf-Is-9uJ" secondAttribute="trailing" constant="16" id="2An-lH-c5w"/>
+                            <constraint firstItem="TAA-j0-nsk" firstAttribute="leading" secondItem="RUV-b9-zup" secondAttribute="leading" constant="16" id="2LC-WN-kyO"/>
                             <constraint firstItem="uUG-BK-SfO" firstAttribute="top" secondItem="RUV-b9-zup" secondAttribute="top" constant="8" id="3Gf-vy-qEW"/>
                             <constraint firstItem="RUV-b9-zup" firstAttribute="trailing" secondItem="5ul-PQ-faf" secondAttribute="trailing" constant="16" id="3eh-CW-rDe"/>
+                            <constraint firstItem="RUV-b9-zup" firstAttribute="trailing" secondItem="TAA-j0-nsk" secondAttribute="trailing" constant="16" id="5EQ-dj-YrT"/>
                             <constraint firstItem="IXH-Kz-Pbe" firstAttribute="leading" secondItem="RUV-b9-zup" secondAttribute="leading" constant="16" id="7Sp-Ni-6oH"/>
+                            <constraint firstItem="5ul-PQ-faf" firstAttribute="top" secondItem="TAA-j0-nsk" secondAttribute="bottom" constant="8" id="9QT-P7-N6k"/>
                             <constraint firstItem="RUV-b9-zup" firstAttribute="bottom" secondItem="IXH-Kz-Pbe" secondAttribute="bottom" constant="8" id="Dax-fb-YIi"/>
                             <constraint firstItem="RUV-b9-zup" firstAttribute="trailing" secondItem="uUG-BK-SfO" secondAttribute="trailing" constant="16" id="G7H-SG-FlW"/>
                             <constraint firstItem="RUV-b9-zup" firstAttribute="trailing" secondItem="IXH-Kz-Pbe" secondAttribute="trailing" constant="16" id="JeB-4F-rvc"/>
-                            <constraint firstItem="kX5-NF-1pr" firstAttribute="top" secondItem="uUG-BK-SfO" secondAttribute="bottom" constant="8" id="Kkg-h8-Wv2"/>
-                            <constraint firstItem="kX5-NF-1pr" firstAttribute="leading" secondItem="RUV-b9-zup" secondAttribute="leading" constant="16" id="bmp-th-p6a"/>
+                            <constraint firstItem="TAA-j0-nsk" firstAttribute="top" secondItem="uUG-BK-SfO" secondAttribute="bottom" constant="8" id="Qpa-JP-o0j"/>
                             <constraint firstItem="5ul-PQ-faf" firstAttribute="leading" secondItem="RUV-b9-zup" secondAttribute="leading" constant="16" id="epl-Gf-46U"/>
-                            <constraint firstItem="kNf-Is-9uJ" firstAttribute="leading" secondItem="kX5-NF-1pr" secondAttribute="trailing" constant="8" id="hBb-u9-uF3"/>
-                            <constraint firstItem="5ul-PQ-faf" firstAttribute="top" secondItem="kX5-NF-1pr" secondAttribute="bottom" constant="8" id="hwN-FB-AJK"/>
-                            <constraint firstItem="kNf-Is-9uJ" firstAttribute="top" secondItem="uUG-BK-SfO" secondAttribute="bottom" constant="8" id="qf6-pJ-Thd"/>
                             <constraint firstItem="uUG-BK-SfO" firstAttribute="leading" secondItem="RUV-b9-zup" secondAttribute="leading" constant="16" id="wLi-st-tyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RUV-b9-zup"/>
@@ -210,7 +213,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="gray" id="UhQ-Zi-7Fw">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="gray" id="UhQ-Zi-7Fw">
                                             <rect key="frame" x="16" y="0.0" width="44" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
