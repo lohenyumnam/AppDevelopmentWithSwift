@@ -11,13 +11,32 @@ import UIKit
 class MenuItemDetailViewController: UIViewController {
     // Since the detail screen will never be presented without a MenuItem object in place, you can define the property as an implicitly unwrapped optional
     var menuItem: MenuItem!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var addToOrderButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
     }
 
-
+    func updateUI(){
+        titleLabel.text = menuItem.name
+        priceLabel.text = String(format: "₹%.2f", menuItem.price)
+        descriptionLabel.text = menuItem.description
+    }
+    
+    @IBAction func orderButtonTapped(_ sender: UIButton) {
+        // A quick bounce Animation
+        UIView.animate(withDuration: 0.3) {
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

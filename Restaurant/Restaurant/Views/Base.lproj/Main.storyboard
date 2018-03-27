@@ -130,7 +130,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-PQ-faf">
                                 <rect key="frame" x="16" y="279" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-Kz-Pbe">
@@ -139,6 +139,9 @@
                                 <state key="normal" title="Add To Order">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="423-jR-HAP" eventType="touchUpInside" id="zKn-eZ-CJG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,6 +164,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RUV-b9-zup"/>
                     </view>
+                    <connections>
+                        <outlet property="addToOrderButton" destination="IXH-Kz-Pbe" id="ceb-4G-Uk8"/>
+                        <outlet property="descriptionLabel" destination="5ul-PQ-faf" id="gKb-3d-FfC"/>
+                        <outlet property="imageView" destination="uUG-BK-SfO" id="TZZ-Rm-U31"/>
+                        <outlet property="priceLabel" destination="kNf-Is-9uJ" id="8Kn-EI-Lhd"/>
+                        <outlet property="titleLabel" destination="kX5-NF-1pr" id="dlu-VD-278"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r9-1B-HAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
