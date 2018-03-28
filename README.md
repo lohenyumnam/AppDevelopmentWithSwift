@@ -13,3 +13,4 @@ Lesson number | Lesson Name | Project Name
 4 | Guided Project: List | ToDoList
 5.6| Working with the Web: Concurrency | SpacePhoto
 5.6| Lab—iTunes Search (Part 3) | iTunesSearch
+5.7| Guided Project: Restaurant | Restaurant
