@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class CategoryTableViewController: UITableViewController {
     
@@ -20,6 +21,8 @@ class CategoryTableViewController: UITableViewController {
                 self.updateUI(with: categories)
             }
         }
+        // Checking if the App got a user permission for notification
+        initNotificationSetupCheck()
     }
     
     func updateUI(with categories: [String]){
@@ -55,6 +58,19 @@ class CategoryTableViewController: UITableViewController {
             let menuTableViewController = segue.destination as! MenuTableViewController
             let index = tableView.indexPathForSelectedRow!.row
             menuTableViewController.category = categories[index]
+        }
+    }
+    
+    // Notification Implimentation
+    /// Checking if The app Got a user permission for Notification
+    func initNotificationSetupCheck() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert])
+        { (success, error) in
+            if success {
+                print("Permission Granted")
+            } else {
+                print("There was a problem!")
+            }
         }
     }
  

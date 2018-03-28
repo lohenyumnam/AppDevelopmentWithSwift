@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class OrderTableViewController: UITableViewController, AddToOrderDelegate {
    
@@ -132,7 +133,23 @@ class OrderTableViewController: UITableViewController, AddToOrderDelegate {
         if segue.identifier == "ConfirmationSegue" {
             let orderConfirmationViewController = segue.destination as! OrderConfirmationViewController
             orderConfirmationViewController.minutes = orderMinutes
+            
+            notification(time: orderMinutes)
         }
+    }
+    
+    func notification(time: Int){
+        let timeInSec = (time - 5)*60
+        
+        let notification = UNMutableNotificationContent()
+        notification.title = "Hello Dear"
+        notification.body = "Your Order will be here soon"
+        notification.sound = UNNotificationSound.default()
+
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInSec), repeats: false)
+        let request = UNNotificationRequest(identifier: "notification1", content: notification, trigger: notificationTrigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
 
